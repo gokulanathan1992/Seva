@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header.js';
 import '../Styles/app.less';
 
 export default class App extends Component
@@ -13,7 +14,7 @@ export default class App extends Component
     {
         return (
             <div className="app">
-                This is the main App Component.
+                <Header/>
             </div>
         )
     }
