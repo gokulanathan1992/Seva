@@ -13,12 +13,14 @@ export default class Header extends Component
     {
         return (
             <div className="header">
-                <h2>Header Component</h2>
-                <div className="register">
-                    <button>Signup</button>
-                </div>
-                <div className="login">
-                    <button>Login</button>
+                <div className="header-content">
+                    <h4>Header Component</h4>
+                    <div className="register">
+                        <button className="btn">Signup</button>
+                    </div>
+                    <div className="login">
+                        <button className="btn">Login</button>
+                    </div>
                 </div>
             </div>
         )

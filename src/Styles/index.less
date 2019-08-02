@@ -1,12 +1,23 @@
+@bgImageUrl: 'https://kbob.github.io/images/sample-5.jpg';
+@siteFontFamily: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@siteFontColor: black;
+
 html
 {
-    background: white;
-    height: 100% !important;
-
     body
     {
-        color: black;
+        background-image: url(@bgImageUrl);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        color: @siteFontColor;
         margin: 0;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: @siteFontFamily;
+
+        #app
+        {
+            background: inherit;
+        }
     }
 }
