@@ -6,7 +6,7 @@ export default class Header extends Component
     constructor(props)
     {
         super(props);
-        console.log("App: Constructor");
+        console.log("Header: Constructor");
     }
 
     render()

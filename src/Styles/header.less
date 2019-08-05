@@ -1,32 +1,20 @@
 @defaultWidth: 100%;
 @defaultHeight: 100%;
 @headerHeight: 50px;
-@headerOverlayColor: inset 0 0 0 3000px rgba(0, 0, 0, 0.3);
+@headerOverlayColor: rgba(255, 0, 0, 0.3);
+@headerBackdropFilter: grayscale(1) blur(5px);
+@headerBoxShadow: 0px 5px 20px black;
 
 .header
 {
-    background: inherit;
-    box-shadow: 0px 5px 20px black;
-    position: absolute;
+    background: @headerOverlayColor;
+    backdrop-filter: @headerBackdropFilter;
+    box-shadow: @headerBoxShadow;
+    position: fixed;
     width: @defaultWidth;
     padding: 0 10px 0 10px;
     height: @headerHeight;
     overflow: hidden;
-
-    &:before 
-    {
-        content: " ";
-        background: inherit;
-        width: 2*@defaultWidth;
-        height: 2*@defaultHeight;
-        position: absolute;
-        left: -15px;
-        right: 0;
-        top: -15px; 
-        bottom: 0;
-        box-shadow: @headerOverlayColor;
-        filter: blur(5px);
-    }
 
     .header-content
     {

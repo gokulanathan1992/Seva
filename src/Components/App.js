@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header.js';
+import Carousel from './Homepage/Carousel.js';
 import '../Styles/app.less';
 
 export default class App extends Component
@@ -15,6 +16,7 @@ export default class App extends Component
         return (
             <div className="app">
                 <Header/>
+                <Carousel/>
             </div>
         )
     }
