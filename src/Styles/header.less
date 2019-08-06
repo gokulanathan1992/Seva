@@ -1,8 +1,8 @@
 @defaultWidth: 100%;
 @defaultHeight: 100%;
 @headerHeight: 50px;
-@headerOverlayColor: rgba(255, 0, 0, 0.3);
-@headerBackdropFilter: grayscale(1) blur(5px);
+@headerOverlayColor: linear-gradient( to right, rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5));
+@headerBackdropFilter: sepia(1) blur(5px);
 @headerBoxShadow: 0px 5px 20px black;
 
 .header
@@ -15,6 +15,7 @@
     padding: 0 10px 0 10px;
     height: @headerHeight;
     overflow: hidden;
+    z-index: 100000;
 
     .header-content
     {
