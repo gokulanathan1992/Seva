@@ -27,7 +27,12 @@ export default class Carousel extends Component
     goToPrevSlide = () =>
     {
         if(this.state.currentIndex === 0)
-            return;
+        {
+            return this.setState(prevState => ({
+                currentIndex: prevState.images.length - 1,
+                translateValue: prevState.translateValue - this.slideWidth() * (prevState.images.length - 1)
+            }))
+        }
         
         this.setState(prevState => ({
             currentIndex: prevState.currentIndex - 1,
