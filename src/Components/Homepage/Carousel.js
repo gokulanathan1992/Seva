@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Parallax, Background } from 'react-parallax';
 import '../../Styles/carousel.less';
 
 export default class Carousel extends Component
@@ -70,13 +71,17 @@ export default class Carousel extends Component
                     {
                         this.state.images.map((image, i) => {
                             const imageStyle = {
-                                backgroundImage: `url(${image})`,
+                                height: '175%',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: 'center'
                             }
                             return (
-                                <div key={i} className="slide" style={imageStyle}></div>
+                                <Parallax key={i} className="slide" bgImage={image} bgImageStyle={imageStyle} strength={1000}></Parallax>
                             )
                         })
                     }
+                    
+                    
                 </div>
                     
                 <div className="backArrow arrow" onClick={this.goToPrevSlide}>
