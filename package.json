@@ -24,6 +24,11 @@
   },
   "homepage": "https://github.com/gokulanathan1992/Seva#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.21",
+    "@fortawesome/free-brands-svg-icons": "^5.10.1",
+    "@fortawesome/free-solid-svg-icons": "^5.10.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "jquery": "^1.12.4",

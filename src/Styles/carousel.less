@@ -1,14 +1,28 @@
+@carouselHeight: 100vh;
+@carouselBackground: black;
+@carouselBoxShadow: 0px 5px 20px black;
+
+@contentPosition: relative;
+@contentTop: 50vh;
+@contentLeft: unset;
+@contentRight: unset;
+@contentMargin: 50px;
+
+@headingFontSize: 45px;
+@subHeadingFontSize: 20px;
+@paraFontSize: 15px;
+
 .carousel-box
 {
-    // background: black;
-    box-shadow: 0px 5px 20px black;
-    height: 85vh;
+    background: @carouselBackground;
+    box-shadow: @carouselBoxShadow;
+    height: @carouselHeight;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
     white-space: nowrap;
 
-    .slide-wrapper
+    .slideWrapper
     {
         height: inherit;
         position: relative;
@@ -18,39 +32,147 @@
             height: 100%;
             width: 100%;
             display: inline-block;
+
+            .slideContent
+            {
+                color: white;
+                position: @contentPosition;
+                top: @contentTop;
+                left: @contentLeft;
+                right: @contentRight;
+                margin: @contentMargin;
+
+                .slideHeading
+                {
+                    h1 
+                    {
+                        font-size: @headingFontSize;
+                    }
+                }
+
+                .slideSubHeading
+                {
+                    h3
+                    {
+                        font-size: @subHeadingFontSize;
+                    }
+                }
+
+                .slidePara
+                {
+                    font-size: @paraFontSize;
+                }
+            }
+        }
+
+        .slideImage 
+        {
+            background-repeat: no-repeat;
+            background-position: center;
+            animation-name: zoom;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes zoom 
+        {
+            from 
+            {
+                height: 180%; 
+                width: 115%;
+            }
+
+            to 
+            {
+                height: 170%; 
+                width: 100%;
+            }
+        }
+
+        .fadeImage
+        {
+            .slideImage;
+            animation-name: zoom-and-fade;
+        }
+
+        @keyframes zoom-and-fade 
+        {
+            from 
+            {
+                height: 180%; 
+                width: 115%;
+                opacity: 0;
+            }
+
+            20%
+            {
+                opacity: 1;
+            }
+
+            80%
+            {
+                opacity: 1;
+            }
+
+            to 
+            {
+                height: 170%; 
+                width: 100%;
+                opacity: 0;
+            }
         }
     }
 
     .arrow 
     {
         position: absolute;
-        top: 50%;
-        height: 50px;
-        width: 50px;
+        top: 0;
+        height: 100%;
+        width: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #f9f9f9;
-        border-radius: 50%;
         cursor: pointer;
-        transition: transform ease-in .1s;
-        z-index: 1000;
+
+        &:hover
+        {
+            .arrowIcon
+            {
+                color: white;
+                transition: 300ms ease-in;
+            }
+        }
+
+        .arrowIcon
+        {
+            color: transparent;
+            transition: 300ms ease-in;
+        }
     }
     
     .nextArrow 
     {
-        right: 25px;
+        right: 0px;
         color: #fff;
+        transition: 300ms ease-in;
+
+        &:hover
+        {
+            right: -5px;
+            transition: 300ms ease-in;
+        }
     }
     
     .backArrow 
     {
-        left: 25px;
+        left: 0px;
         color: #fff;
-    }
-    
-    .fa-arrow-right:before, .fa-arrow-left:before 
-    {
-        color: #222
+        transition: 300ms ease-in;
+
+        &:hover
+        {
+            left: -5px;
+            transition: 300ms ease-in;
+        }
     }
 }
