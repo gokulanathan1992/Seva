@@ -2,11 +2,12 @@
 @carouselBackground: black;
 @carouselBoxShadow: 0px 5px 20px black;
 
+@contentColorDefault: white;
 @contentPosition: relative;
-@contentTop: 50vh;
+@contentTop: 25vh;
 @contentLeft: unset;
 @contentRight: unset;
-@contentMargin: 50px;
+@contentMargin: 100px;
 
 @headingFontSize: 45px;
 @subHeadingFontSize: 20px;
@@ -35,7 +36,7 @@
 
             .slideContent
             {
-                color: white;
+                color: @contentColorDefault;
                 position: @contentPosition;
                 top: @contentTop;
                 left: @contentLeft;

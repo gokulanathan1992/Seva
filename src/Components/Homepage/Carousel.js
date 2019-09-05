@@ -101,7 +101,13 @@ export default class Carousel extends Component
             {
                 return (
                     <div className="slideWrapper">
-                        <Parallax className="slide" bgImage={this.state.image} bgClassName="fadeImage" strength={1000}>
+                        <Parallax className="slide" bgImage={this.state.image} bgClassName="fadeImage" strength={1000} renderLayer={percentage => (
+                            <div style={{ 
+                                position: 'absolute',
+                                background: `rgba(0, 0, 0, ${percentage * 0.5})`,
+                                width: '100%',
+                                height: '100%'
+                            }} />)}>
                             {slideContent}
                         </Parallax>
                     </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Header.js';
-import Carousel from './Homepage/Carousel.js';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './Homepage/Home';
+import Login from './LoginPage/Login';
 import '../Styles/app.less';
 
 export default class App extends Component
@@ -14,10 +15,14 @@ export default class App extends Component
     render()
     {
         return (
-            <div className="app">
-                <Header/>
-                <Carousel/>
-            </div>
+            <BrowserRouter>
+                <div className="app">
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/Login" component={Login} />
+                    </Switch>
+                </div>
+            </BrowserRouter>
         )
     }
 }
