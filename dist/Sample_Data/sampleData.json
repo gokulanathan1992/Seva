@@ -1,0 +1,35 @@
+{
+    "header": {
+        "headerTitle": "Header Title Temp",
+        "headerCTA1Label": "Login",
+        "headerCTA2Label": "SignUp"
+    },
+    
+    "homeCarousel": {
+        "images": [
+            "https://i.pinimg.com/originals/ff/e4/59/ffe459582c8e4dc676d73e4b07dcabc0.jpg",
+            "https://kbob.github.io/images/sample-5.jpg",
+            "https://newevolutiondesigns.com/images/freebies/nature-hd-background-5.jpg"
+        ],
+        "textContent": [
+            {
+                "heading": "Slide-1 Heading Temp",
+                "subHeading": "Slide-1 Sub Heading Temp",
+                "para": "Slide-1 Paragraph Temp"
+            },
+            {
+                "heading": "Slide-2 Heading Temp",
+                "subHeading": "Slide-2 Sub Heading Temp",
+                "para": "Slide-2 Paragraph Temp"
+            },
+            {
+                "heading": "Slide-3 Heading Temp",
+                "subHeading": "Slide-3 Sub Heading Temp",
+                "para": "Slide-3 Paragraph Temp"
+            }
+        ],
+        "currentIndex": 0,
+        "translateValue": 0,
+        "transition": "slide"
+    }
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Homepage/Home';
 import Login from './LoginPage/Login';
+import Admin from './AdminPage/Admin';
 import '../Styles/app.less';
 
 export default class App extends Component
@@ -20,6 +21,7 @@ export default class App extends Component
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/Login" component={Login} />
+                        <Route path="/Admin" component={Admin} />
                     </Switch>
                 </div>
             </BrowserRouter>

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { loadHeader, loadHomeCarousel, goToPrevSlide, goToNextSlide } from '../../Actions';
 import Header from '../Header.js';
 import Carousel from './Carousel.js';
+import { Link } from 'react-router-dom';
 
 class Home extends Component
 {
@@ -32,6 +33,9 @@ class Home extends Component
             <div>
                 <Header content={this.props.headerContent}/>
                 <Carousel content={this.props.carouselContent} prevSlide={this.props.goToPrevSlide} nextSlide={this.props.goToNextSlide}/>
+                <Link to='/Admin'>
+                    <button className="btn">Admin</button>
+                </Link>
             </div>
         )
     }

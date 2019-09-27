@@ -56,7 +56,13 @@ const Carousel = (props) =>
                     {
                         props.content.images.map((image, i) => {
                             return (
-                                <Parallax key={i} className="slide" bgImage={image} bgClassName="slideImage" strength={1000}>
+                                <Parallax key={i} className="slide" bgImage={image} bgClassName="slideImage" strength={1000} renderLayer={percentage => (
+                                    <div style={{ 
+                                        position: 'absolute',
+                                        background: `rgba(0, 0, 0, ${percentage * 0.5})`,
+                                        width: '100%',
+                                        height: '100%'
+                                    }} />)}>
                                     {slideContent(props.content.textContent[i])}
                                 </Parallax>
                             )

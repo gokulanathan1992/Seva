@@ -5,7 +5,13 @@ export function loadHeader()
 {
     return(dispatch) => 
     {
-        return dispatch(loadHeaderContent('Header title', 'Login', 'Signup'));
+        return fetch('../Sample_Data/sampleData.json').then((response) => 
+        {
+            return response.json();
+        }).then((data) =>
+        {
+            return dispatch(loadHeaderContent(data.header.headerTitle, data.header.headerCTA1Label, data.header.headerCTA2Label));
+        })
     }
 }
 
@@ -24,26 +30,25 @@ export function loadHeaderContent(heading, CTA1, CTA2)
 
 export function loadHomeCarousel()
 {
-    const images = [
-        "https://i.pinimg.com/originals/ff/e4/59/ffe459582c8e4dc676d73e4b07dcabc0.jpg",
-        "https://kbob.github.io/images/sample-5.jpg",
-        "https://newevolutiondesigns.com/images/freebies/nature-hd-background-5.jpg"
-    ];
-
-    const image = "https://i.pinimg.com/originals/ff/e4/59/ffe459582c8e4dc676d73e4b07dcabc0.jpg";
-
     return(dispatch) =>
     {
-        return dispatch(loadHomeCarouselContent(images, image, 'slide'));
+        return fetch('../Sample_Data/sampleData.json').then((response) =>
+        {
+            return response.json();
+        }).then((data) =>
+        {
+            return dispatch(loadHomeCarouselContent(data.homeCarousel.images, data.homeCarousel.images[0], data.homeCarousel.textContent, data.homeCarousel.transition));
+        })
     }
 }
 
-export function loadHomeCarouselContent(images, image, transition)
+export function loadHomeCarouselContent(images, image, content, transition)
 {
     return {
         type: 'loadHomeCarouselContent',
         images,
         image,
+        content,
         transition
     }
 }
