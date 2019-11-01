@@ -1,9 +1,63 @@
+// ADMIN
+// Get Store Content
+
+export function getStore()
+{
+    return (dispatch) =>
+    {
+        return fetch('../Sample_Data/sampleData.json').then((response) =>
+        {
+            return response.json();
+        }).then((data) =>
+        {
+            return dispatch(getStoreContent(data));
+        })
+    }
+}
+
+export function getStoreContent(data)
+{
+    return {
+        type: 'getStoreContent',
+        content: data
+    }
+}
+
+// Update Store Content
+
+export function updateStore(data)
+{
+    return (dispatch) =>
+    {
+        return fetch('../Sample_Data/sampleData.json', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then((response) =>
+        {
+            console.log(response);
+            return response.json();
+        }).then((data) =>
+        {
+            console.log(data);
+            return dispatch(updateStoreContent(data));
+        })
+    }
+}
+
+export function updateStoreContent(data)
+{
+    return {
+        type: 'updateStoreContent',
+        content: data
+    }
+}
+
 // HEADER
 // Load Header Content
 
 export function loadHeader()
 {
-    return(dispatch) => 
+    return (dispatch) => 
     {
         return fetch('../Sample_Data/sampleData.json').then((response) => 
         {
@@ -30,7 +84,7 @@ export function loadHeaderContent(heading, CTA1, CTA2)
 
 export function loadHomeCarousel()
 {
-    return(dispatch) =>
+    return (dispatch) =>
     {
         return fetch('../Sample_Data/sampleData.json').then((response) =>
         {
@@ -65,7 +119,7 @@ function carouselSlideWidth()
 
 export function goToPrevSlide(content)
 {
-    return(dispatch) =>
+    return (dispatch) =>
     {
         return dispatch(prevSlide(content));
     }
@@ -98,7 +152,7 @@ export function prevSlide(content)
 
 export function goToNextSlide(content)
 {
-    return(dispatch) =>
+    return (dispatch) =>
     {
         return dispatch(nextSlide(content));
     }

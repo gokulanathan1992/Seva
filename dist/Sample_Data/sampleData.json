@@ -30,6 +30,6 @@
         ],
         "currentIndex": 0,
         "translateValue": 0,
-        "transition": "slide"
+        "transition": "fade"
     }
 }

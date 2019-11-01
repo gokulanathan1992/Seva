@@ -22,9 +22,14 @@ class Home extends Component
 
     componentDidMount()
     {
-        setInterval(() => {
+        this.nextSlideInterval = setInterval(() => {
             this.props.goToNextSlide(this.props.carouselContent);
         }, 5000);
+    }
+
+    componentWillUnmount()
+    {
+        clearInterval(this.nextSlideInterval);
     }
 
     render()
@@ -33,9 +38,6 @@ class Home extends Component
             <div>
                 <Header content={this.props.headerContent}/>
                 <Carousel content={this.props.carouselContent} prevSlide={this.props.goToPrevSlide} nextSlide={this.props.goToNextSlide}/>
-                <Link to='/Admin'>
-                    <button className="btn">Admin</button>
-                </Link>
             </div>
         )
     }
